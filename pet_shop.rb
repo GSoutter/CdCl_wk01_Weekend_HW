@@ -70,3 +70,7 @@ end
 def remove_customer_cash(customer_hash, cash_to_remove)
   customer_hash[:cash] -= cash_to_remove
 end
+
+def customer_pet_count(customer_hash)
+  return customer_hash[:pets].length
+end
