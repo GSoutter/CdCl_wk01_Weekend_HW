@@ -41,11 +41,20 @@ def pets_by_breed(petshop_hash, pet_breed_string)
   return pet_by_breed_list
 end
 
-def find_pet_by_name(petshop_hash, pet_breed_string)
+def find_pet_by_name(petshop_hash, pet_name_string)
   for pet in petshop_hash[:pets]
-    if pet[:name] == pet_breed_string
+    if pet[:name] == pet_name_string
       return pet
     end
   end
   return nil
+end
+
+
+def remove_pet_by_name(petshop_hash, pet_name_string)
+  for pet in petshop_hash[:pets]
+    if pet[:name] == pet_name_string
+      petshop_hash[:pets].delete(pet)
+    end
+  end
 end
