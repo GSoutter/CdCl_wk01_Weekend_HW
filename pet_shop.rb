@@ -78,3 +78,32 @@ end
 def add_pet_to_customer(customer_hash, customer_pet_new)
   customer_hash[:pets].push(customer_pet_new)
 end
+
+
+#optional
+
+def customer_can_afford_pet(customer_hash, customer_pet_new_proposed)
+  if customer_hash[:cash] >= customer_pet_new_proposed[:price]
+    return true
+  else
+    return false
+  end
+end
+
+
+def sell_pet_to_customer(petshop_hash, pet_hash, customer_hash)
+  if customer_can_afford_pet(customer_hash, pet_hash)
+
+    remove_customer_cash(customer_hash, pet_hash[:price])
+    add_or_remove_cash(petshop_hash, pet_hash[:price])
+    add_pet_to_customer(customer_hash, pet_hash)
+    remove_pet_by_name(petshop_hash, pet_hash[:name])
+    increase_pets_sold(petshop_hash, 1)
+
+  else
+    return p "customer cannot afford pet"
+  end
+
+  #can customer afford pet
+  #complete transaction
+end
