@@ -66,3 +66,7 @@ end
 def customer_cash(customer_hash)
   return customer_hash[:cash]
 end
+
+def remove_customer_cash(customer_hash, cash_to_remove)
+  customer_hash[:cash] -= cash_to_remove
+end
