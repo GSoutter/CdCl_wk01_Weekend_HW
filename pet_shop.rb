@@ -58,3 +58,7 @@ def remove_pet_by_name(petshop_hash, pet_name_string)
     end
   end
 end
+
+def add_pet_to_stock(petshop_hash, new_pet_hash)
+  petshop_hash[:pets].push(new_pet_hash)
+end
