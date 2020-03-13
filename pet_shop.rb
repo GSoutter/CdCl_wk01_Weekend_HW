@@ -31,12 +31,21 @@ def stock_count(petshop_hash)
   return petshop_hash[:pets].length
 end
 
-def pets_by_breed(petshop_hash, cat_breed_string)
+def pets_by_breed(petshop_hash, pet_breed_string)
   pet_by_breed_list = []
   for pet in petshop_hash[:pets]
-    if pet[:breed] == cat_breed_string
+    if pet[:breed] == pet_breed_string
       pet_by_breed_list.push(pet)
     end
   end
   return pet_by_breed_list
+end
+
+def find_pet_by_name(petshop_hash, pet_breed_string)
+  for pet in petshop_hash[:pets]
+    if pet[:name] == pet_breed_string
+      return pet
+    end
+  end
+  return nil
 end
