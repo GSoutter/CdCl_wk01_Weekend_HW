@@ -92,7 +92,9 @@ end
 
 
 def sell_pet_to_customer(petshop_hash, pet_hash, customer_hash)
-  if find_pet_by_name(petshop_hash, pet_hash[:name]) == nil
+  if pet_hash == nil
+    return "no pet entered"
+  elsif find_pet_by_name(petshop_hash, pet_hash[:name]) == nil
     return "pet not found"
   elsif customer_can_afford_pet(customer_hash, pet_hash)
 
